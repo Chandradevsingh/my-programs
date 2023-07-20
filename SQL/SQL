@@ -1,0 +1,533 @@
+File System : File system is one, which controls how the data is stored and retrieved.
+It is nothing but information stored in different computer files.
+Different subsets of sql commands are as follows :
+DDL (Data Definition Language) : It deals with the description of the database schems, and used to create and modify the structure of the database objects in the database.
+It allows you to perform various operations on the database such as create, alter and delete objects.
+DDL is very popular and extensively used when compare to other commands.
+DCL (Data Control Language) : It allows you to control the access to the database. Grant or revoke are the dcl commands.
+Grant gives user access priviledges to the database while revoke withdraws user access priviledges given to the user with the help of the grant command.
+DML (Data Manipulation Language) : It allows you to access and manipulate data. It helps you to insert, update, delete and retrieve data from the database.
+TCL (Transaction Control Language) : It allows you to deal with the transaction of the database.
+Few of the tcl commands are commit, rollback, savepoint and set transaction.
+SQl hasd well defined standards.
+In sql, we can create multiple views, this is one of the unique and early feature that sql came up with.
+View is nothing but creating a virtual table.
+Virtual table is a temporary table for certain use. By doing this we can protect the integrity of the data.
+Databases are used in different verticals.
+magniture of impact
+fraudulent
+Data value definition : 
+In computer science, “data” describes information that has been translated into letters, numbers, and/or symbols so that it can be read,
+moved and manipulated by a machine. Information that any person would represent as numbers, such as statistics, phone numbers, or inventory counts, are obviously data.
+But in a digital-first world like ours, almost anything can be data. The search terms you type in to answer an important question, the amount of time
+you spend in an app, even unstructured data like the content of your most recent LinkedIn post are raw data that has value to someone, somewhere.
+The standard definition of data is values from different sources which has been translated for some purpose.
+Data is a collection of facts, figures and values from different sources.
+Source for the data can be like temperature reading, financial data, videos, blogs, texts etc. It goes on. In the end, it should make a meaningful sense.
+Only then, we can consider it as a data. This image clearly depicts the different source of data. 
+Database is an organized collection of data, where data is stored and accessed electronically from a computer system.
+This entire process is bi-directional, that is control flows on both the sides.
+Each one of them has it's pros and cons.
+Since we have already started the topic the database, it wouldn't be fair to drop this topic abruptly.So i should discuss the few database related queries. First
+query is how to create a database. To explain this let me jump into ny sql workbench. This is the interface of mysql workbench. On the left side of screen we
+can see the database. In the center area we are gonna write our queries. At the bottom part we are going to get the status of the query that has been executed.
+Mysql is a database management system.
+Can we use other dbms, yes we can but the systax may slightly vary.
+
+
+Table is a collection of data in a tabular form.
+data elements also known as values.
+The point of intersection of a row and column is called a cell.
+
+nosql
+
+usually while storing a small amout of data file system is effective. 
+Data sharing and security are closely related. sharing data among multiple users introduces a lot of security risks.
+Since sql has a large user base as well as well-defined standard, for a beginner, it is really easy to learn.
+Sql was developed at IBM by Donald Lee Chamberlin and Raymond F Boyce in the early 1970s.
+The environment setup of these two system has to be same. Else the query won't be excuted.
+Since sql is a language that is used to operate on the database. We need to look at the bigger picture at the data management industry.
+
+
+
+
+create database edureka;
+drop database edureka;
+
+create table emp(
+id int not null auto_increment,
+ename varchar(20),
+address varchar(30),
+primary key(id),
+);
+
+drop table emp;
+
+create table student(
+	studentid int not null auto_increment,
+	fname varchar(20),
+	lname varchar (20),
+	address varchar (30),
+	city varchar (15),
+	marks int,
+	primary key (studentid)
+);
+
+select * from student;
+select * from edureka.student;
+select fname, lname from student;
+select fname, lname from edureka.student;
+
+select fname from student where city = 'Goa';
+select from student where fname='Bharath' and lname='Singh';
+select from student where fname='Bhuvi' or lname='Kumar';
+select * from student where not fname = 'Ashok';
+insert into student(Fname, Lname, Address, City, Marks)
+values ('Manoj', 'Sharma', '#07, MG Road', 'Jaipur', 438);
+
+Aggregate Functions : 
+select count(studentid) from student;
+select avg(Marks) from student;
+select sum(Marks) from student;
+select min(Marks) from student;
+select fname, lname, max(marks) from student;
+select count(studentid), city from student group by city;
+select fname, sum(marks) from student having sum(marks)<500;
+select count(studentid), city from student group by city order by city asc;
+select fname, lname from student where marks is null;
+select fname, lname from student where marks is not null;
+update student set fname='Dev', lname='Chauhan' where studentid = 1;
+delete from student where studentid=2; #This is the way to delete or update a table with safe mode on.
+To try a update or delete with any restrictions disable the safe mode and restart the mysql workbench.
+delete from student where city='Jaipur';
+select studentid, fname, lname from student where city in ('Jaipur', 'Greater Noida', 'Moradabad');
+select studentid, fname, lname from student where marks between 200 and 500;
+alias
+column alias
+table alias
+select studentid as id from student;
+select s.fname, s.lname from student as s;
+not in
+in
+Comparision Operators : 
+<
+>
+<=
+>=
+
+select * from DEPT
+select * from DEPT where loc in ('chennai', 'Bangalore', 'Hyderabad')
+select * from employee where salary > 20,000
+select * from employee where salary >= 20,000
+select * from employee where salary > 30,000
+select * from employee where salary >= 30,000
+
+Like Condition : 
+like condition to perform wildcard searches of valid search string values
+% denotes zero or many characters
+_ denotes one character
+'c%'
+'c_'
+
+select * from DEPT where loc like 'c%'
+select * from DEPT where loc like '%c'
+select * from DEPT where loc like '%i'
+select * from DEPT where loc like 'c%i'
+
+set @intinput = 2
+select case (@intinput) when 1 then 'one'
+when 2 then 'two'
+when 3 then 'three'
+else 'happy ending'
+end
+
+select case(City)
+when 'Jaipur' then 'J'
+when 'Greater Noida' then 'N'
+when 'Moradabad' then 'M'
+else 'No Idea'
+end
+from student
+
+select case(loc)
+when 'Chennai' then 'Tamilnadu'
+when 'Bangalore' then 'Karnataka'
+else 'No Idea'
+end
+from dept
+
+Bangalore or Bengaluru (Official Name)
+
+What is a trigger?
+
+Normalization
+Process of reducing the redundancy of data
+Improves the data Integrity
+Database normalization is the technique of organizing the data in the database.
+It is a systematic approach of decomposing table to eliminate data redundandcy.
+It's a multi-step process that puts data into tabular form removing duplicated data from its relational tables.
+On the scrren we just saw that table is getting decomposed into two smaller tables.
+Is it really necessary to normalize the table that is present on the database.
+Well, every table in the database has to be in the normal form. So normalization is used mainly for two purpose : 
+The first one is it is used to eliminate repeated data. Having repeated data in the system, not only makes the process slow, but will cause trouble during the later
+part of transactions. And second one is to make sure that data dependencies make some logical sense.
+Data Anomalies
+Insertion Anomalies
+Updation Anomalies
+Deletion Anomalies
+
+1 NF
+2 NF
+3 NF
+4 NF (Boyce Codd Normal Form)
+
+
+1 NF : 
+We tackle the problem of atomicity. Atomicity means values in the table should not be further divided. In simple term, a cell can not hold multiple value.
+2 NF : 
+It has to be in first normal form. Second one is a table should not contain partial dependency.
+We have removed the partial functional dependency that we had.	
+3 NF :
+It has to be in 2nd normal form. It is used in normalizing the table to reduce the duplication of data and ensure the referential integrity. The second condition
+is no non-prime attribute is transitively dependent on any non-prime attribute which depends on other non-prime attributes.
+In it, we remove transitive functional dependency.
+
+4 NF : It is also known as 3.5 normal form.
+Every functional dependency A -> B, A has to be the super key of that particular table.
+
+This is decomplexify, bringing a welcome dose of simplicity to complex topics.
+
+
+What are triggers?
+Triggers are the SQL codes that are automatically executed in response to certain events on a particular table.
+These are used to maintain the integrity of the data.
+The trigger name has to be unique and shouldn't repeat.
+
+Syntax and Example : 
+
+Create Trigger Trigger_ Name
+(Before | After)
+[Insert | Update | Delete]
+on [Table_Name]
+[for each row for each column ]
+[ Trigger_body ]
+
+Example : 
+
+create trigger sample_trigger
+before insert on student
+for each row
+set new.marks = new.marks + 6;
+
+Drop trigger trigger name;
+
+Drop trigger calculate name;
+
+show triggers in database_name;
+
+create trigger sample_trigger
+before insert
+on student
+for each row
+set new.marks = new.marks + 100;
+
+create trigger total_mark after insert on student for each row insert into final_mark values();
+create trigger cal after insert on student for each row insert into final_marks values(new.marks);
+
+Advantages and Disadvantages of Triggers : 
+Advantages of the triggers : 
+1. Forcing security approvals on the table.
+Forcing security approvals on the table that in present in the database.
+2. Triggers check the integrity of the data.
+Triggers provide another way to check the integrity of the data.
+3. Counteracting invalid exchanges.
+Triggers counteracts invalid exchanges.
+4. Triggers handle errors.
+Triggers handle errors from the database layer.
+5. Triggers are useful for inspecting the data.
+Triggers can be useful for inspecting data changes in the table.
+
+Disadvantages of Triggers : 
+1. Triggers can only provide extended validation not all kind of validation.
+i. e. : For simple validations, you can not use not null, unique, check and foreign key constraints in a given trigger.
+2. Triggers may increase the overhead of a database.
+3. Triggers can be difficult to troubleshoot. Because they execute automatically in the database. This may not be visible to client applications.
+
+What are sql joins?
+(So if someone asks you what are joins in sql.)
+Joins in sql are commands which are used to combine rows from two or more tables based on a related column between those tables.
+Joins are predominantly used when a user is trying to extract data from a table which have one-to-many relationships between them or many-to-many relationship
+between them.
+
+SQL Joins : 
+
+Types of Joins : 
+1. Inner Join
+2. Left Join
+3. Right Join
+4. Full Join
+
+select table1.column1, table1.column2, table2.column1, table2.column2...
+from table1 inner join table2
+on table1.MatchingColumnName = Table2.MatchingColumnName;
+
+So these are the columns that you want to retrieve from the respective tables.
+
+create table Employee(
+	EmpID int not null auto_increment,
+	EmpfName varchar(20),
+	EmplName varchar (20),
+	Age int,
+	address varchar (30),
+	city varchar (15),
+	primary key (EmpID)
+);
+
+create table project(
+ProjectID int not null auto_increment,
+EmpID int,
+CLientID int, 
+ProjectName varchar (20), 
+ProjectStartDate date, 
+primary key(PROJECTID)
+);
+
+delete from project;
+
+insert into Project(ProjectID, EmpID, CLientID, ProjectName, ProjectStartDate)
+values (1111, 1, 3, 'Project1', '2019-04-21');
+
+insert into employee(EmpID, EmpfName, EmplName, Age, address, city)
+values (1, 'Shudheer', 'Shekhawat', 30, '#Lakdi Road','Moradabad');
+
+select employee.EmpID, employee.Empfname, employee.Emplname, project.ProjectID, project.ProjectName from employee inner join project on employee.EmpID=project.ProjectID;
+
+select employee.EmpfName, Employee.Emplname, Project.ProjectID, Project.ProjectName from employee left join project on employee.EmpID=Project.EmpID;
+select Employee.EmpfName, Employee.EmplName, Project.ProjectID, Project.ProjectName from project right join employee on Project.EmpID=employee.EmpID;
+
+select table1.column1, table1.column2, table2.column1, table2.column2...
+from table1 left join table2
+on table1.MatchingColumnName = Table2.MatchingColumnName;
+
+select table1.column1, table1.column2, table2.column1, table2.column2...
+from table1 right join table2
+on table1.MatchingColumnName = Table2.MatchingColumnName;
+
+select table1.column1, table1.column2, table2.column1, table2.column2...
+from table1 right join table2
+on table1.MatchingColumnName = Table2.MatchingColumnName;
+
+select Employee.EmpfName, Employee.EmplName, project.ProjectID, project.ProjectName from employee left join project on Project.EmpID=employee.EmpID union select Employee.EmpfName, Employee.EmplName, project.ProjectID, project.ProjectName from employee right join project on Project.EmpID=employee.EmpID;
+
+What is a natural join and in which situations a natural join is used?
+
+An natural join is also a join operation that is used to give an output based on the columns in both the tables between which the join operation is implemented.
+It basically aims to give you output based on the columns between which this join is applied. Now basically natural join is used when you want to make sure that
+the number of columns returned are less.
+
+What is a hash join?
+Hash joins are also a type of joins which are used to join large tables or an instance, where the user wants most of the join table rows. So whenever the
+user wants most of the join table rows, or when you want to join two large tables. You basically use this type of join, that is basically the hash join.
+The hash join is basically a two-step algorithm, so it has mainly the build phase and the probe phase. So in the build phase, you basically create an in-memory
+hash-index on the left side of input and in the probe phase, you go through the right side of input.
+Each row at a time and then find the matches using the index created in the build phase.
+
+What is a self and cross join?
+Self Join : 
+Self join is a join of a table to itself. This implies that each row in a table is joined with itself.
+
+Cross Join : 
+The cross join is a type of join in which a join clause is applied to each row of a table to every row of the other table. Also, when the where condition is
+used, this type of join behaves as an inner join, and when the where condition is not present. It behaves like a caresian product.
+
+SQL Built-in Functions : 
+Built-in functions are used to calculate values and manipulate data. These functions can be used anywhere as expressions.
+
+Some common Built-in functions in sql server :
+
+1. Conversion Functions : These converts values from one data type to another data type.
+2. Logical functions
+3. Math Functions : To play aroud with data and for mathematical operations, we use mathematical functions.
+5. Aggregate Functions : If you want to calculate for example, average, we want to calculate sum, or total of salaries of all the employees. Then we use
+aggregate functions.
+6. String Functions
+7. Date Functions
+
+Built-in Functions
+
+MS SQL built-in functions take zero or more inputs and returns a value.
+
+1. Gets system related information.
+2. Used for calculations.
+3. Manipulate input data.
+
+Conversion Functions : Fuctions that support data type casting and converting.
+Logical Functions : Scalar functions that perform logical operation.
+Math Functions : Scalar functions perform a calculation, usually based on input values that are provided as
+arguments, and return a numeric value.
+Aggregate Functions : Aggregate functions perform a calculation on a set of values and return a single value. Except for
+COUNT, aggregate functions ignore null values. Aggregate functions are frequently used with the
+GROUP BY clause of the SELECT statement.
+String Functions : Scalar functions perform an operation on a string input value and return a string or numeric value
+Date Functions : Functions that manipulate dates.
+
+Some people refers aggregate functions as a group functions, so don't get confused, they are one and the same thing.
+
+cast(expr as datatype)    :    Returns value of specified datatype on success, throws error on failure
+convert(datatype, expr)
+parse(value as datatype)
+try_cast(expr as datatype)    :    Returns value of specified datatype on success, NULL on failure
+try_convert(datatype, expr)
+try_parse(value as datatype)
+
+Conversion Functions :  Examples
+
+Example : select cast('10' as int)*20 as cast_ver
+		, convert(int, '10')*20 as convert_ver
+
+Note : Both functions can be used interchangeably in both situations
+cast is ansi-sql complaint, while convert is not
+
+select try_cast('A100' as int)*20 as trycast_ver
+       , try_convert(int, 'x100')*20 as tryconvert_ver
+display result as null, as conversion is not possible
+
+select cast('A100' as int)*20 as trycast_ver
+throws error as conversion failed
+
+Microsoft sql server management studio
+
+Logical Functions : Logical functions can be used to display one of the several values based on logical conditions.
+
+choose : choose(index, val_1, val_2, [val_n]) : returns a specified index from a list of values. Return null, if index is 0 or greater than the number of items.
+
+iif() : iif(boolean expr, true_value, false_value) : return one of two values, based on whether the boolean expr evaluates to true or false.
+
+e.g. : 
+
+select choose(3, 'Test', 'Zest', 'Rest', 'Nest')
+
+select choose(0, 'Test', 'Zest', 'Rest', 'Nest')
+
+select choose(5, 'Test', 'Zest', 'Rest', 'Nest')
+
+select iif(10>11, 'True', 'False') as resultset
+
+Math Functions : 
+
+Math functions can be used to calculate business and engineering calculations.
+
+abs(num_expr) - Returns absolute (positive) value of the specified numeric expr.
+rand(seed) - Returns a pseudo-random float value from 0 to 1 (exclusive). Seed is optional
+value
+exp(float_expr) : Returns the exponential value
+round(num_expr, length) : Returns a numeric value, rounded to the specified length or precision
+floor((num_expr) : Returns the largest integer less than or equal to the specified numeric expr
+sign(num_expr) : Returns the positive (+1), zero (0), or negative (-1) sign of the specified of expr
+sqrt(float_expr) : Returns the square root of the specified float value
+ceiling(num_expr) : Returns the smallest integer greater than, or equal to, the specified numeric expr 
+square(float_expr) : Returns the square of the specified float value
+power(float_expr, y) : Returns the value of the specified expr to the specified power
+
+Let's execute few of the examples in management studio for better clarity.
+We can club, we can nest the functions.
+as of now, i am giving a standard keyword visual set.
+Let me execute both the statements in one go. Like i did earlier.
+
+Aggregate Functions : 
+
+avg(expr) : Returns the average of the values in group. Null values are ignored.
+min(expr) : Returns the minimum value in the expr.
+sum(expr) : Returns the sum of all the values, or only the DISTINCT values, in the expr. SUM can be used
+with numeric columns only. Null values are ignored.
+count(expr) : Returns the number of items in a group. COUNT works like the COUNT BIG function. The only
+difference between the two functions is their return values. COUNT always returns an int data
+type value. COUNT_BIG always returns a bigint data type value.
+max(expr) : Returns the maximum value in the expr.
+
+trim() : It removes both leading and trailing spaces.
+
+select DEPTNO as Departmentno, count(*) as Count from EMP
+group by deptno
+
+Exec
+
+create procedure dbo.sp_getEmployeeInfo
+create proc
+
+create procedure dbo.uspgetdetail
+
+@DEPTNO nvarchar(30)
+
+as select * from EMP
+where DEPTNO = @DEPTNO
+
+GO
+
+create procedure dbo.uspgetdetail
+
+@DEPTNO nvarchar(30) = null
+
+as select * from EMP
+where DEPTNO = @DEPTNO
+
+GO
+
+let me open a new query again.
+
+create procedure dbo.uspgetdetail
+
+@DEPTNO nvarchar(30) = null,
+@DEPTNAME nvarchar(60) = null
+
+as select * from EMP
+where DEPTNO = @DEPTNO
+
+out or output
+
+
+#Stored Procedure with Output Parameter
+create procedure dbo.uspGetCount
+--Define Parameter
+/*
+This is a multiparameter Stored Procedure
+having output parameter*/
+@DEPTNO nvarchar(30), @Count int output
+as
+select @Count = count(*)
+from EMP
+where DEPTNO = @DEPTNO
+
+Declare @Count int
+EXEC dbo.uspGetCount @DEPTNO=20, @Count = @Count output
+select @count
+
+Stored Procedure with Try Catch Block
+
+CREATE PROCEDURE dbo.uspTryCatchTest
+AS
+BEGIN TRY
+SELECT 1/0
+END TRYc
+BEGIN CATCH
+SELECT ERROR _NUMBER() AS ErrorNumber
+ERROR_SEVERITY() AS ErrorSeverity
+,ERROR _STATE() AS ErrorState
+, ERROR PROCEDURE() AS ErrorProcedure
+, ERROR_LINE() AS ErrorLine
+,ERROR_MESSAGE() AS ErrorMessage;
+END CATCH
+
+EXEC dbo.uspTryCatchTest
+
+Though, sql server provides list of many predefined functions. That are built into the T - SQL language.
+These supplied or out of box functions, helps in extending the capabilties of sql. By providing the ability to perform string manipulation, mathematical calculations,
+data type conversion by using converter cast functions.
+User defined functions are compact piece of transact sql code.
+We can dump a set of sql statement in a function. And, then we can call it as many as times. Like stored procedures, they also improve performance
+because the user-defined functions reduce the compilation time of sql query by cashing the execution plan and reusing it.
+Functions are also easier to maintain because functions help us to seperate the complex calculations or the complex business logic from the regular
+sql query. So that we can debug the query quicker and better. It again reduce the network traffic because of it's caching plan.
+So the functions can be used in where clause as well by which we can limit the number of rows, sent to the client. We can use the functions in select clause
+and we can use the functions in where clause.
+
