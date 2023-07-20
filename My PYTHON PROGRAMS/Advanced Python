@@ -1,0 +1,459 @@
+Hey guys, welcome to this advanced python course. My name is Patric. And i create free tutorials about
+python and machine learning. In this course, i'll teach you all the advanced topics, that will bring
+your python skills to the next level.
+Because i share some helpful tips along the way.
+The course is splitted into 21 sections.
+
+List : A list is a collection data type, which is ordered, mutable and that allows duplicate elements.
+So let's have a closer look at lists, and what you can do with them.
+First of all, a list is created with square brackets. And within these brackets, you put each element
+that you want seperated by a comma. For example, let's put some strings in here, banana, cherry and an
+apple. And if we print this, all elements are printed.
+We can also create an empty list with the list function.
+You can see this creates an empty list and later on you can append items.
+All python collection types allows different data types.
+If you want to access an element, you can do that by referring to the index.
+So index zero is the very first item.
+Now, we got our apple back.
+A typo is a typographical error.
+For example if we have a typo here.
+Some more useful things that you can do is for example, you can reverse the list with reverse method
+now, the list is in reversed order.
+Useful tricks.
+Slicing is a very nice way to access the sub parts of your list(with the colon (:)).
+And inside the list, you specify the start index and the stop index.
+And if we print this, We have a new list that goes from inex 1 to index 5 and  the last item,
+the last index is excluded.
+And if we don't specify a start index, it goes all the way from the beginning.
+And if we don't specify a stop index, it goes all the way to the end.
+And you also have an optional step index. So and then i put in another colon and then
+the step index. And by default it's one.
+So let's say, this goes all the way from the beginneing to the end with a step one.
+
+And this is because with this assignment, both lists refer to the same list inside the memory.
+So yeah, be very careful here.
+
+And if you want to make an actual copy of your list. You can do it with copy() method.
+So now if we print them, we see that the original list is still the same.
+
+Remove() : Removes the first occurence of the value. And raises ValueError if the value not present.
+
+Tuple : A Tuple is a collection data type, which is ordered and immutable. And It is similiar
+to a list. with a main difference to the tuple cannot be changed after it's creation.
+A tuple is often used with objects that belong together.
+Parenthesis are optional, we can leave them away.
+We can easily iterate over a tuple with a for in loop.
+So let's talk about some other useful methods that you can do with a tuple.
+
+Dictionary : A dictionary is a collection data type, that is unordered and Mutable. It consists of a collection of key value pairs. So each key value value pair maps the key to its associated value. Let's
+have a closer look at dictionaries and what we can do with them. First of all, a dictionary
+is created with braces. And inside these braces, you put each key value pair, seperated by a
+colon.
+And if you want to look up the age. We get 28.
+A dictionary is mutable so you can add or change items after its creation.
+It got gets overwritten.
+Now, we see that age is no longer inside our dictionary.
+popitem() : Prior to python 3.7, This removes an arbitrary pair. Since python 3.7, it removes
+This removes the last inserted item.
+When you want to loop through a dictionary, you have several different ways within for in loops.
+Now, if we print the copy and the original one, then we see that both dictionaries now have the
+new key value pair. This is because with this simple assignment statement, both dictionaries
+now point to the same dictionary inside our memory. So be very careful if use this expression.
+If you want to make an actual copy, you can use the built in copy function. So if we use
+this one and print it and we see that the original one didn't change, or you can use the dict
+function. And as an argument, you pass the dictionary that you want to copy. So if we use
+this, we see that the original dictionary didn't get affected. All the existing keys and key value
+pairs got overwritten. So the name is now Mary, the age is 27. The email didn't change and
+the non existing keys the city got edit, so, yeah, that's a nice way to update two
+dictionaries. Let's talk about possible key types.
+
+Set : A set is a collection data type that is unordered and mutable. But unlike lists,
+or tuples, it does not allow duplicate elements.
+A set is created with braces just like a dictionary, but we don't put a key value pairs
+in it. But instead just single elements seperated by a comma.
+For example, let's put some numbers in here and print this.
+remove() : It gives an error if element not found.
+discard() : If element not found, nothing happens.
+pop() : returns an arbitrary value and also removes it.
+union() : The union combines elements from both two sets without duplication.
+intersection() : The intersection only takes the elements that are found in the both sets.
+
+diffrence() : The diffrence will return a set with all elements from the first set that
+are not in the second set.
+
+If we print the copy and also print the original one, then we see that also the original one changed,
+because with this simple assignment both points to the same set in the memory. So be careful, here.
+You only copy the reference.
+
+Frozenset : Now, as the last thing, i want to show you is the frozen set, the frozenset is also
+a collection data type. This is just an immutable version of a normal set.
+
+string : A string is an ordered and immutable collection datatype. That is used for text representation.
+And it is the most used data type in python. I hope at the end of session, you'll feel
+comfortable working with them.
+
+strip() : Be aware that this method does not change our string in place. Because as i said,
+a string is immutable.
+
+upper() : It converts a string into uppercase.
+
+lower() : It converts a string into lowercase.
+
+startswith() : It checks if a string starts with something.
+
+endwith() : It checks if a string ends with something.
+
+find() : It finds the index of a character in a string.
+
+It retuns first index that it finds with an o.
+
+We can also check for substrings.
+
+replace() : It replaces a specified character or substring within the string.
+
+And also be aware here that this will return a new string and does not change
+this one.
+
+But this is a bad python code, because what happens here since a string is immmutable,
+this will create a new string here and then assigns it back to our original string.
+so this operation is very expensive.
+
+What you should better use it the dot chain method.
+This will also give us the same result.
+But it's much cleaner and also much faster.
+
+% anf format() are the old formatting styles and the newest is the f-strings, since
+the python 3.6, or newer, you can use the f-strings.
+What this does, it evaluates this at run time. So we can also put some operation here.
+So let's say mathematical operation like var times 2. And this will be evaluated at run time.
+
+collections : The collections module implements special container data types, and provides alternatives
+with some additional functionality compared to the general built-in containers, like dictionaries.
+
+Counter : The Counter is a container that stores the elements as dictionary keys and their counts
+as dictionary values.
+So let's say, we have a string called a with some different characters a, bbb, ccc. And then we
+create our Counter, we say my counter equals counter, and then we give it our string. And if we
+print it, then we see we have a dictionary with all the different characters as keys and their counts
+as their values. So we have five times a, four times b, and three times c. And like with a
+normal dictionary, we can only have a look at only items. So this will give us
+all the key value pairs. We can have a look at the keys. So this will give us
+an iterable over the keys. And we can also only have a look at the values. So
+this will give us all the different values. And what's also very helpful
+is to have a look at the most common element in our counter dictionary.
+
+NamedTuple : The namedtuple is an easy to create and lightweight object type,
+similiar to a struct. So what i can do is i can define my named tuple.
+I say for example, let's create a 2-D point and call it point equals and then i will
+say named tuple. And then as first argument, i give it the class name.
+So typically, this is the same name that i used here, And then as a second argument,
+i use another string and here i use all the different fields i want seperated by
+either a comma or a space. So i can say x, y. So this will create a class called
+point with the field x and y. So now i can create this point.
+
+OrderedDictionary : The ordered dictionary is just a regular dictionary, but they remember
+the order in which the items were inserted.
+So they have become less important now, since the built in dictionary class has also
+the ability to remember the order since python 3.7. This is guaranteed. But for
+example, if you use an older python version, this may be a way to use a dictionary that
+remembers the order. So for example, let's create a dictionary like so.
+And then we can append a key value pairs like with a normal dictionary.
+
+DefaultDict : The default dict also similiar to the usual dictionary container,
+with the only difference that it will have a default value if the key has not been set yet.
+
+as integer here as default type.
+
+class int() 
+int([x]) -> integer int(x, base=10) -> integer
+
+Convert a number or string to an integer, or return 0 if no arguments are given. If x is a number, return x.__int__(). For floating point numbers, this truncates towards zero.
+
+If x is not a number or if base is given, then x must be a string, bytes, or bytearray instance representing an integer literal in the given base. The literal can be preceded by '+' or '-' and be surrounded by whitespace. The base defaults to 10. Valid bases are 0 and 2-36. Base 0 means to interpret the base from the string as an integer literal.
+
+>>> int('0b100', base=0)
+4
+
+class float()
+Convert a string or number to a floating point number, if possible.
+
+class list()
+Built-in mutable sequence.
+
+If no argument is given, the constructor creates a new empty list. The argument must be an iterable if specified.
+
+class deque()
+deque([iterable[, maxlen]]) --> deque object
+
+A list-like sequence optimized for data accesses near its endpoints.
+
+Deque : The deque is a double ended queue. and it can be used to add and remove elements from both
+ends.
+
+Itertools : The itertools module is a collecton for handling iterators.
+
+Simply put, iterators are data types that can be used in a for loop.
+
+advanced tools :
+                1. The product
+                2. permutations
+                3. combinations
+                4. the accumulate function
+                5. the groupby function
+                6. infinite iterators
+
+product : The product will compute the cartesian product of the input.
+then may be repitions get clearer.
+Permulations : Then we also have something called permutations. So permutations will return all possibie orderings of an input.
+
+Then we have combinations.
+combinations : We can also specify the length of the permutation. But in combinations, length is mandatory.
+
+Then we have the accumulate function.
+Accumulate function - The accumulate function makes an iterator that reutns accumulated sum.
+
+Lambda : A lambda function is a small one line anonymous function, that is defined without a name.
+and it looks like this.
+lambda arguments: lambda expression
+
+This is practically same as the normal function.
+
+Map() : So, the map function transforms each element with a function.
+
+filter() : Filter function returns all elements, which evaluates to true.
+           The filter function must return true or false.
+           And the filter function will return all elements for which the function evaluates to
+           true.
+reduce() : It repeatedly applies the function to the elements and returns a single value.
+
+
+Exceptions : A python program terminates as soon as it encounters as error and an error can be
+a syntax error and an exception. So in this tutorial we will have a look what's
+the difference between a syntax error and an exception? What are the common built-in
+exceptions? How can we raise and handle exceptions? And how can we define our own exceptions?
+A syntax error occurs when the parser detects a syntactically incorrect statement.
+And now, exceptions, so even if a statement is syntactically correct it, it may cause
+an error when it is executed. And this called an exception error. There are several
+different error classes. For exampke, trying to add a number and a string
+will raise a type error. 
+
+Module not found error is a sub class from the inport error.
+
+NameError : Name c is not defind.
+
+Filenotfound Error : 
+
+ValueError : Which happens if the function or operation recieves an argument
+             that has the right type but an inappropriate value.
+
+Now, let's talk about raising an exception.
+SO if you want to force an exception to occur, when a certain condition is met.
+Then you can do this with the raise keyword.
+as a second way, you can use the assert statement, so you can say. you don't use an
+if statement. so you use an assert statement. An assert statement will throw an assertion error
+if your assertion is not true. So if you write here, you make an assertion that
+x should be larger or equal to zero. And, now, if we run this, this will raise an assertion error.
+We can also give it a message here. So x is not positive.
+Now, this will print the message here. And if our statement is correct, so x is positive.
+then, your code will be just fine. So if i ran this, then no assertion is here.
+Now if you want to handle exceptions, so you can catch the exceptions with a try except block.
+
+Raise Exception() : This is the base exception.
+
+So if i run this your program doesn't stop here. It will continue, and it will continue in this line.
+And you can also catch the type of exception so you can write except, exception as e. And then
+you can print your exceptions. Then you can print your exceptions. If i run this, It prints then
+it prints the division by zero message from the zero division error class.
+Now, it's good practice to specify the type of exception, you want to catch.
+And therefore you have to know the possible errors.
+Finally clause runs always no matter if there was an exception or not.
+And, this is used to make clean up operations.
+Now, as the last thing, let's talk about how we can define our own exception.
+So we can simpy define our own error classes, by sub classing from the base exception class.
+So then as a base class we use an exception class.
+
+Logging : Python already comes with a powerful built-in logging module. So you can quickly
+add logging to your application by simpy saying import logging.
+And then you can use this. And in this tutorial, we'll have a look at the different
+log levels, the different configuration options, how to log in different modules,
+how to use different log handlers, how to capture stack traces in your log, and
+how to use rotating file handler.
+
+So let's start. So after importing the logging module. You can lock to five different lock
+levels.
+They indicate the severity of the events.
+
+So now, I'm sure, many of you, just like myself, are guitly of using the standard print
+debugging method. Where all you do, is you go in your program, and you do something like
+print run and print run and the value of a variable and you just have a bunch of print
+statements kind of scattered all over the place. And this is really what you're using
+as your debugging log. This is giving you information. Now, there's nothing inherently
+wrong with doing this. And in small programs, this is completely fine.
+
+Once you get into larger programs, or you start dealing with stuff that's lot more
+complicated, you definitely want to have some type of persistent log, that's going
+to store all of the data from your program and have different levels of logs. What i
+mean by that is you could have something, that's info or something that's warning,
+something that's critical or an exception or an error. It's just going to be better
+and more sustainable practice. So in this video, i'm going to give you a quick
+introduction to the logging module, show you how simple it is to use, and then you
+can implement this in your next project.
+Now, before we dive in, i do quickly want to mention if you wanna get better at
+python, GO and programming in General, then do checkout my programming, course
+ProgrammingExpert.io.
+
+All right, so let's get started. The first thing to do here is import logging.
+Now, this is a built in module in python. You do not need to install it,
+and it comes with a bunch of basic functionality that you can use right
+of the box. First of all, we have a bunch of different levels of logging.
+
+Jason : Jason is short for Javascript object notation. And its a lightweight data format that is used for data exchange. It's heavily used in web applications, so you should be comfortable working with it. Luckily python already comes with a built in JS module that makes working with Jason data very easy. So in this
+tutorial we'll have a look at how to enode and decode json data with this module. So let's dive into it.
+So, let's dive into it. And first of all, let's have a look how jason data looks. So here, i've a example file called example.json. And here we see, that jason data looks very similiar to a dictionary. So it consists of several key value pairs. And as values it can take strings, numbers, or booleans or also nested
+types, like here, a nested array or a nested dictionary. And we can also have a look at the whole conversion table.
+This is how python is translated to json and vice versa.
+So a dictionary in python is an object in json. List and Tuple are an array, a string is a string,
+integer, long and float are a number in json. True and False are also true and false but with lowercase and
+None is null in json. And so these are all the conversion you have to know. And let's start working with it.
+So let's say we have a python dictionary and want to convert it into json format. And this is also called
+serialization or encoding. So let's say we have a jason data and want to convert it back to python object.
+This is called deserialization or decoding.
+
+Random Numbers : So python comes with different built in modules to generate random numbers. In this tutorial, we'll have a look at pseudo random numbers. The secrets modules for cryptographically strong random numbers and the numpy random module to generate arrays with random numbers.
+So let's start with the random module. And first of all, we import random. And this is used to generate pseudo random numbers for various distributions. And it's called pseudo random because the number seem random but they are reproducible.
+
+Now, if you want an integer, we can use random.randint and give it the range. And if we ran this a couple
+of times, hmm. Now, it's not happening. But this range will actually, now, we got it. This will include
+the upperbound. And you might expect a behaviour with this is not included. So for this reason, you can use
+the rand range method. So this will do the same thing, it will pick a random integer in this range.
+But here, the upper bound is not included. So this will never pick the 10 here. 
+
+Then there is a random.normalvariate() function with mu and sigma. So let's give it mu as 0, and sigma as
+1. And this might be useful, if you ae working in statistics. So this will pick a random value from
+a normal distribution with a mean of 0 and the standard deviation of 1. So let's have a look at how this normal distribution looks.
+(variable) def normalvariate(
+    mu: float = 0,
+    sigma: float = 1
+) -> float
+Now, the random module also comes with different functions to work with sequences. So, let's say, we have a
+list call it mylist equals. And let's create a list with different characters. If we print this, we will
+see that each character is now a element in our list.
+shuffle() : It shuffles the elements of a sequence in place.
+
+And because, these numbers are reproducible, they are not recommended for security purposes.
+And for this purpose, you should use the secrets module. So we can use import secrets. And this only
+has three functions. And they should be used for things like passwords, or security tokens, or account
+authentication things. So for all these purposes, you should use the secrets module. The disadvantage is that, it takes more times for these algorithms, but they will generate a true random number.
+
+
+() -> float
+rand(d0, d1, ..., dn)
+
+Random values in a given shape.
+
+Create an array of the given shape and populate it with random samples from a uniform distribution over [0, 1).
+
+Parameters
+d0, d1, ..., dn : int, optional
+    The dimensions of the returned array, must be non-negative. If no argument is given a single Python float is returned.
+
+Returns
+out : ndarray, shape (d0, d1, ..., dn)
+    Random values.
+
+See Also
+random
+
+Examples
+>>> np.random.rand(3,2)
+array([[ 0.14022471,  0.96360618],  #random
+       [ 0.37601032,  0.25528411],  #random
+       [ 0.49313049,  0.94909878]]) #random
+
+(low: int, high: int | None = ...) -> int
+randint(low, high=None, size=None, dtype=int)
+
+Return random integers from low (inclusive) to high (exclusive).
+
+Return random integers from the "discrete uniform" distribution of the specified dtype in the "half-open" interval [low, high). If high is None (the default), then results are from [0, low).
+
+Parameters
+low : int or array-like of ints
+    Lowest (signed) integers to be drawn from the distribution (unless high=None, in which case this parameter is one above the *highest* such integer).
+high : int or array-like of ints, optional
+    If provided, one above the largest (signed) integer to be drawn from the distribution (see above for behavior if high=None). If array-like, must contain integer values
+size : int or tuple of ints, optional
+    Output shape. If the given shape is, e.g., (m, n, k), then m * n * k samples are drawn. Default is None, in which case a single value is returned.
+dtype : dtype, optional
+    Desired dtype of the result. Byteorder must be native. The default value is int.
+
+Returns
+out : int or ndarray of ints
+    size-shaped array of random integers from the appropriate distribution, or a single such random int if size not provided.
+
+See Also
+random_integers : similar to randint, only for the closed
+    interval [low, high], and 1 is the lowest value if high is omitted.
+Generator.integers: which should be used for new code.
+
+Examples
+>>> np.random.randint(2, size=10)
+array([1, 0, 0, 0, 1, 1, 0, 0, 1, 0]) # random
+>>> np.random.randint(1, size=10)
+array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+Generate a 2 x 4 array of ints between 0 and 4, inclusive:
+
+>>> np.random.randint(5, size=(2, 4))
+array([[4, 0, 2, 1], # random
+       [3, 2, 2, 0]])
+Generate a 1 x 3 array with 3 different upper bounds
+
+>>> np.random.randint(1, [3, 5, 10])
+array([2, 2, 9]) # random
+Generate a 1 by 3 array with 3 different lower bounds
+
+>>> np.random.randint([1, 5, 7], 10)
+array([9, 8, 7]) # random
+Generate a 2 by 4 array using broadcasting with dtype of uint8
+
+>>> np.random.randint([1, 3, 5, 7], [[10], [20]], dtype=np.uint8)
+array([[ 8,  6,  9,  7], # random
+       [ 1, 16,  9, 12]], dtype=uint8)
+
+The important thing is that you should use the numpy random seed() method
+instead of the seed() method from the random module that we've seen previously.
+These are two completely different seed generators.
+
+Decorators : Decorators are very powerful tool in python. And every advanced python programmer should
+know it. In this video, i will show you, the concept behind the decorators. How you can write your own decorators, The difference between function and class decorators and some typical use cases.
+More common is a function decorator and it looks like this.
+So this is how the decorator looks. And what this does, a decorator is a function, that takes another function as argument and extend the behaviour of this function, without explicitly modifying it.
+So in other words, it allows you to add new functionality to an existing function. So in this case,
+this function would be extended with the functionality of this decorator. And in order to understand this concept, we have to know, that functions in python are first class objects. THis means that like any other
+object, they can be defined inside another function, passed as an argument to another function,
+and even returned from another function. So now, let's have a closer look at the concept.
+So let's say, we have a function, and call it print_name(). And this will simply print Alex.
+And then we have a decorator function, call it start_end_decorator(). And now as an argument, it
+takes a function. And inside our decorator function, we have an inner function, we call it wrapper().
+So def wrapper, this is a wrapper function, which wraps our function. So inside this wrapper()
+function, we execute the function. And then as i said, i can extend the behaviour. So i can do
+something before and i can do something after it. So before, in this case, simply print start
+and after it, i want to print end, and then after creating this inner wrapper function, i also
+have to return it. And now, to apply this, let's first of all, simply, let's execute the print_name()
+function. And if i run this, it prints Alex. And in order to apply the decorator,
+i assign this print_name() function, now to our decorator function. And as argument, i take
+the print name function. So now the print_name() function has this new functionality. So now, if
+i run this, we will see that it prints start and then executes the function and prints Alex
+and then it prints end, now the decorator function will do the same thing as this line.
+Now, if i write @start_end_decorator, then i don't need this anymore. So this now does the samething.
+If i execute it now, it will also prints start, Alex and end. And now this is how we can extend
+the behaviour of a function with a decorator. So let's see, what happens if our function have some
+arguments.
+This is a template that you can use for all your function decorators.
+
+
+Function Decorators : 
+Class Decorators : 
+
+
+
