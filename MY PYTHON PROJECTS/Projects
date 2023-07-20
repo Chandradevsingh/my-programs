@@ -1,0 +1,157 @@
+1. QR Code Generator
+
+alias : Pet Name : Alternative Name
+
+2. Email Validation in Python (using String Functions)
+
+3. Trace mobile number current location
+
+4. Email Validation in Python (using Regex)
+
+5. Make a Simplest Instagram Bot in Python
+
+6. Voice Assistant in Python
+
+#Convert Voice to Text
+#Speech Recognizer
+#Convert Text to Speech
+
+#Additional Modules
+#web browser
+#pyjokes
+#SMTP
+#datetime
+#pyttsx3
+
+(source: Any, timeout: Any | None = None, phrase_time_limit: Any | None = None, snowboy_configuration: Any | None = None) -> AudioData
+Records a single phrase from source (an AudioSource instance) into an AudioData instance, which it returns.
+
+This is done by waiting until the audio has an energy above recognizer_instance.energy_threshold (the user has started speaking), and then recording until it encounters recognizer_instance.pause_threshold seconds of non-speaking or there is no more audio input. The ending silence is not included.
+
+The timeout parameter is the maximum number of seconds that this will wait for a phrase to start before giving up and throwing an speech_recognition.WaitTimeoutError exception. If timeout is None, there will be no wait timeout.
+
+The phrase_time_limit parameter is the maximum number of seconds that this will allow a phrase to continue before stopping and returning the part of the phrase processed before the time limit was reached. The resulting audio will be the phrase cut off at the time limit. If phrase_timeout is None, there will be no phrase time limit.
+
+The snowboy_configuration parameter allows integration with Snowboy <https://snowboy.kitt.ai/>__, an offline, high-accuracy, power-efficient hotword recognition engine. When used, this function will pause until Snowboy detects a hotword, after which it will unpause. This parameter should either be None to turn off Snowboy support, or a tuple of the form (SNOWBOY_LOCATION, LIST_OF_HOT_WORD_FILES), where SNOWBOY_LOCATION is the path to the Snowboy root directory, and LIST_OF_HOT_WORD_FILES is a list of paths to Snowboy hotword configuration files (*.pmdl or *.umdl format).
+
+This operation will always complete within timeout + phrase_timeout seconds if both are numbers, either by returning the audio data, or by raising a speech_recognition.WaitTimeoutError exception.
+
+7. Send Emails using Python
+
+8. Typing Speed Calculator
+
+9. Make Google Translator
+
+10. Sign Language Translator in Python
+
+11. Text to Handwriting using Python
+
+12. Digital Clock
+
+13. YouTube Video Downloader
+
+14. Skype Automation using Python
+
+15. Internet Speed Checker using Python
+
+16. Website Blocker using Python
+
+17. Shutdown and Restart Computer/Laptop using Python
+
+18. Desktop Notifier in Python
+
+19. .py to .exe Converter
+#pip install pyinstaller
+#pip install auto-py-to-exe
+
+20. Screen Recorder using Python
+
+21. Video to Audio converter in Python
+askopenfilename() - It asks for a file name to open.
+
+22. Keylogger in Python
+pip install pynput
+
+ 23. Virtual Environment in Python
+Virtual Environment and Requirements.txt
+
+24. Face Detection using Python
+
+25. Password Cracking Wordlist using Python
+
+26. Screenshoot using Python
+
+27. Weather App using Python
+
+28. File Manager using Python
+
+29. Convert Image to ASCII Ari using Python
+
+30. Convert Video to GIF using Python
+
+31. Split Screen Videos using Python
+
+32. Add Watermarks (text) over your Videos using Python
+
+33. Extracting and Assigning Audio clips in your videos using Python
+
+34. Password Generator using Python (Random Password Generator)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Build a Social Media Application using Django : 
+
+Named Social Book : 
+
+Django is a high-level python web framework that enables rapid development of secure and maintainable websites. In this five-hour course, you'll learn django by building a simple social media application.
+This is a great course for people, new to django and for people, who are familiar with django and want to learn, how to make an social media application.
+So now, let me show you around everything we are building in this project. So this is the end product of this project. So as you can see, we have a feed, so this is just a post feed, where we see the posts of the users that we are following. And then once, we have this, we also implemented a fixture which can allow us like a user's post. And just click on the button, and now you see, it says, liked by one person. So now, we can also click on the button again, and no likes. So we can like and unlike a post. We can also click on the name of that post. And then it takes us to the profile page of that post. So in that profile page, we can see th profile image, username, the bio, the amount of posts, this user have, the followers and the following.
+Django is very scalable.
+One key is that django, has a very large cummunity.
+Now this is important, when you encounter an error, 
+I'm going to be building this social media application from scratch to the finish.
+
+python --version
+pip --version
+
+
+Commands : 
+django-admin startproject Project_Name
+django-admin startproject social_book
+python manage.py runserver
+
+
+A Django app is like a subset of django project.
+This is the url, that we are seeing in all our project, or the out of our project in. That's the localhost, port 8000, that's the default url for django,
+when you run your django on your local server, on your machine. It is. Now, we have created our djanjo project and stuff.
+This is the basically home url of our website.
+
+Url Routing : 
+Let's go ahead and set up our urls.
+Template Setup
+Creating a profile model
+Signup
+Let's opt out of the server real quick.
+
+Jira software
+
+# sp.update()
+# print(lab.winfo_width())
+
+any () : (__iterable: Iterable[object], /) -> bool
+Return True if bool(x) is True for any x in the iterable.
+
+If the iterable is empty, return False.

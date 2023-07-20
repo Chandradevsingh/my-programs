@@ -1,0 +1,37 @@
+It's easier than you may think.
+On the first part, i'll teach you some audio processing basics and python.
+So we briefly touched on different audio file formats. Then we talk about different audio signal parameters that you should know.
+plot waveform
+
+Python audio processing basics
+Audio formats
+Signal parameters
+wave module
+plot waveform
+Microphone Recording
+Load MP3
+
+Audio Formats
+.mp3
+.flac
+.wave or .wav : Waveform Audio File Format or Waveform Audio File
+
+.mp3 is the most probably one that you may know. And this is a lossy compression format. So this means it compresses the data. And during this process, we can lose information.
+On the other hand, flac is the loss less compression format. So it also compresses the data.
+But it allows us to perfectly reconstruct the original data. And wave is a uncompressed format.
+So this means that it stores the data in an uncompressed way. So the audio quality here is the best but also the file size is the largest. And wave is the standard for CD audio quality. So we focus on this in the first part, because it's actually very easy to work with this in python. Because we have a built in
+wave module, so we don't have to install this. Now, let's have a look, at how we can work with a wav audio file. By the way, wave stands for waveform audio file format. And before we start loading some data, let's talk about a few parameters that we have to understand. So before we load our first .wave file, let's understand a few parameters.
+
+Audio signal parameters
+- number of channels
+- sample width
+- framerate/sample_rate 44,100Hz or 44.1kHz
+- number of frames
+- values of a frame
+
+So we have the number of channels, this is usually one or two.  So one is also known as mono and two is stereo. This is the number of the independant audio channels, for example 2 or stereo has two independant channels. And this means it gives you the impression that audio is coming from two different directions. Then we have the sample width, this the number of bytes for each sample.
+Then, we have the frame rate, which is also known as the sample rate or sample frequency. So this is the number of samples for each second. And for example, you may have seen this number a lot. so this means 44,100 hertz or 44.1kHz. This is the standard sampling rate for CD quality. So this means we 44,100 sample values in each seconds. And then we have the number of frames. So yeah, this is the total number of frames, we get. And then we have the values in each frame. And when we load this, this will be in a binary format.
+But we can convert this to integer values later.
+And lastly, let's also print the, all the parameters.
+
+This will close the file objects.
